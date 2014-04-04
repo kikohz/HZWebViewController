@@ -1,0 +1,21 @@
+PODS:
+  - BlurView (1.1)
+  - NJKWebViewProgress (0.2.2):
+    - NJKWebViewProgress/Core
+    - NJKWebViewProgress/ProgressView
+  - NJKWebViewProgress/Core (0.2.2)
+  - NJKWebViewProgress/ProgressView (0.2.2)
+
+DEPENDENCIES:
+  - BlurView (from `https://raw.githubusercontent.com/kikohz/BlurView/master/BlurView.podspec`)
+  - NJKWebViewProgress
+
+EXTERNAL SOURCES:
+  BlurView:
+    :podspec: https://raw.githubusercontent.com/kikohz/BlurView/master/BlurView.podspec
+
+SPEC CHECKSUMS:
+  BlurView: 72e465564f820b9b61da7b732f0df56958c011ef
+  NJKWebViewProgress: 4f905b9ab7eb91525dc899cacebd2941a6d4553b
+
+COCOAPODS: 0.29.0

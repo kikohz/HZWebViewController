@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F25A053F-4315-4004-802E-5BF4520C6442</string>
+	<key>IDESourceControlProjectName</key>
+	<string>WebViewDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>69C964F9-AF7F-42BC-994E-76A911A35399</key>
+		<string>https://github.com/kikohz/HZWebViewController.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>WebViewDemo/WebViewDemo.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>69C964F9-AF7F-42BC-994E-76A911A35399</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/kikohz/HZWebViewController.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>69C964F9-AF7F-42BC-994E-76A911A35399</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>69C964F9-AF7F-42BC-994E-76A911A35399</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HZWebViewController</string>
+		</dict>
+	</array>
+</dict>
+</plist>
