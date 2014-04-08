@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.author       = { "kikohz" => "kikohz@gmail.com" }
   s.social_media_url = "http://twitter.com/H_z2"
   s.platform     = :ios, '5.0'
-  s.source       = { :git => "https://github.com/kikohz/HZWebViewController.git", :tag => "v#{s.version}" }
+  s.source       = { :git => "https://github.com/kikohz/HZWebViewController.git", :tag => "#{s.version}" }
 
   s.source_files  = 'HZWebViewController', 'HZWebViewController/**/*.{h,m}'
   s.exclude_files = 'WebViewDemo'
