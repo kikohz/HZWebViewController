@@ -7,7 +7,7 @@ Background blur the webview, displays the loading progress. The interface is sim
 
 Add a pod entry to your Podfile:
 
-	pod 'HZWebViewController', '~> 0.0.1'
+	pod 'HZWebViewController', '~> 0.0.2'
 
 Install the pod(s) by running:
 
