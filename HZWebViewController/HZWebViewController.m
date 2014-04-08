@@ -149,12 +149,20 @@ NSInteger const HZProgresstagId = 222122323;
     
     if(HZFSystemVersion >= 7.0){
       self.edgesForExtendedLayout = UIRectEdgeNone;
-      self.webView.frame = CGRectMake(webViewRect.origin.x, 20+HZProgressBarHeight, webViewRect.size.width, webViewRect.size.height-kTooBarHeight-20-HZProgressBarHeight);
+      webViewRect = CGRectMake(webViewRect.origin.x, 20, webViewRect.size.width, webViewRect.size.height-kTooBarHeight-20);
     }
+    else{
+      webViewRect = CGRectMake(webViewRect.origin.x, 0, webViewRect.size.width, webViewRect.size.height-kTooBarHeight);
+    }
+    self.webView.frame = webViewRect;
   }
   else if (self.mode == HZWebBrowserModeNavigation){
     CGRect webViewRect = self.view.frame;
-    self.webView.frame = CGRectMake(webViewRect.origin.x, kNavBarHeight, webViewRect.size.width, webViewRect.size.height-kNavBarHeight-kTooBarHeight);
+    
+    if(HZFSystemVersion >= 7.0)
+      self.webView.frame = CGRectMake(webViewRect.origin.x, kNavBarHeight+20, webViewRect.size.width, webViewRect.size.height-kNavBarHeight-kTooBarHeight-20);
+    else
+      self.webView.frame = CGRectMake(webViewRect.origin.x, kNavBarHeight, webViewRect.size.width, webViewRect.size.height-kNavBarHeight-kTooBarHeight);
     [self setpNavBar];
   
   }
@@ -184,7 +192,6 @@ NSInteger const HZProgresstagId = 222122323;
   [self.webView stopLoading];
   self.webView.delegate = nil;
   [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-  [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 #pragma mark - Helpers
@@ -205,10 +212,11 @@ NSInteger const HZProgresstagId = 222122323;
   CGSize imageSize = image.size;
   backBt.frame = CGRectMake(10, 5, imageSize.width, imageSize.height);
   [backBt addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
-  [navView addSubview:backBt];
+//  [navView addSubview:backBt];
   [self.view addSubview:navView];
   
-  self.titleLb = [[UILabel alloc] initWithFrame:CGRectMake(backBt.frame.size.width+5, 0, navRect.size.width-(backBt.frame.origin.x+backBt.frame.size.width+10)-5, kNavBarHeight)];
+  CGFloat offset = 15.0f;
+  self.titleLb = [[UILabel alloc] initWithFrame:CGRectMake(offset, 0, navRect.size.width-(offset+10), kNavBarHeight)];
   self.titleLb.numberOfLines = 1;
   self.titleLb.textAlignment = NSTextAlignmentCenter;
   self.titleLb.backgroundColor = [UIColor clearColor];
@@ -355,7 +363,7 @@ NSInteger const HZProgresstagId = 222122323;
 	
 	if(!progressView)
 	{
-    progressView =  [[NJKWebViewProgressView alloc] initWithFrame:CGRectMake(0, 20, 320, HZProgressBarHeight)];
+    progressView =  [[NJKWebViewProgressView alloc] initWithFrame:CGRectMake(0, self.webView.frame.origin.y, self.webView.frame.size.width, HZProgressBarHeight)];
 		progressView.tag = HZProgresstagId;
     //		progressView.backgroundColor = tintColor;
 		[self.view addSubview:progressView];
@@ -363,7 +371,7 @@ NSInteger const HZProgresstagId = 222122323;
 	else
 	{
 		CGRect progressFrame = progressView.frame;
-		progressFrame.origin.y = 20;
+		progressFrame.origin.y = self.webView.frame.origin.y;
 		progressView.frame = progressFrame;
 	}
 	
