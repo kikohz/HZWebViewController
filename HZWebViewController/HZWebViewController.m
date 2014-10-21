@@ -288,6 +288,7 @@ NSInteger const HZProgresstagId = 222122323;
   [self.toolBar setBarStyle:UIBarStyleBlackTranslucent];
   self.toolBar.backgroundColor = [UIColor clearColor];
   [self.view addSubview:self.toolBar];
+    NSLog(@"%@",NSStringFromCGRect(self.toolBar.frame));
   
   
   self.stopLoadingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop
@@ -321,7 +322,12 @@ NSInteger const HZProgresstagId = 222122323;
   UIBarButtonItem *space_ = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
                                                                           target:nil
                                                                           action:nil];
-  space_.width = 35.0f;
+//  space_.width = 35.0f;
+    if(self.toolBar.frame.size.width > 320)
+        space_.width = (self.toolBar.frame.size.width/7);
+    else
+        space_.width = (self.toolBar.frame.size.width/9);
+    
   
   self.toolbarItems = @[closeButton,space_,self.stopLoadingButton, space_, self.backButton, space_, self.forwardButton, space_, actionButton];
   [self.toolBar setItems:self.toolbarItems animated:YES];
