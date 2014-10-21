@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "HZWebViewController"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "Browser Control"
   s.homepage     = "https://github.com/kikohz/HZWebViewController"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
